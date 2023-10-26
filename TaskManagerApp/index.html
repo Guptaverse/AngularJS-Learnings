@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="TaskManagerApp">
+<head>
+    <title>Task Manager</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="TaskManagerController">
+        <h1>Task Manager</h1>
+
+        <form ng-submit="addTask()">
+            <input type="text" ng-model="newTask" placeholder="Add a task" required>
+            <button type="submit">Add</button>
+        </form>
+
+        <ul>
+            <li ng-repeat="task in tasks">
+                {{ task }}
+                <button ng-click="deleteTask($index)">Delete</button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
